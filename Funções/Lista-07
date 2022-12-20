@@ -1,6 +1,6 @@
 ## Lista 07
 
-Crie uma função que recebe como parâmetro um número inteiro e devolve o seu dobro
+1. Crie uma função que recebe como parâmetro um número inteiro e devolve o seu dobro
 
 	void dobro(){
 		int num, dobro;
@@ -13,67 +13,98 @@ Crie uma função que recebe como parâmetro um número inteiro e devolve o seu 
 		dobro();
 	}
 
-Faça uma função que receba a data atual (dia, mês e ano em inteiro) e exiba-a na tela no formato textual por extenso. Exemplo: Data: 01/01/2000, Imprimir: 1 de janeiro de 2000.
+/* Sem usar void */
 
-	void data(){
-	int data,dia,mes,ano;
-	printf("digite o dia: ");
-	scanf("%d", &dia);
-	printf("digite o mês: ");
-	scanf("%d", &mes);
-	printf("digite o ano: ");
-	scanf("%d", &ano);
-	switch(mes){
-	case 1:
-	printf("%d de janeiro de %d", dia,ano);
-	break;
-	case 2:
-	printf("%d de fevereiro de %d", dia,ano);
-	break;
-	case 3:
-	printf("%d de março de %d", dia,ano);
-	break;
-	case 4:
-	printf("%d de abril de %d", dia,ano);
-	break;
-	case 5:
-	printf("%d de maio de %d", dia,ano);
-	break;
-	case 6:
-	printf("%d de junho de %d", dia,ano);
-	break;
-	case 7:
-	printf("%d de julho de %d", dia,ano);
-	break;
-	case 8:
-	printf("%d de agosto de %d", dia,ano);
-	break;
-	case 9:
-	printf("%d de setembro de %d", dia,ano);
-	break;
-	case 10:
-	printf("%d de outubro de %d", dia,ano);
-	break;
-	case 11:
-	printf("%d de novembro de %d", dia,ano);
-	break;
-	case 12:
-	printf("%d de dezembro de %d", dia,ano);
-	break;
-	}
-	}
-	int main(){
-	data();
+	#include <stdio.h>
+
+	int dobro(int numero, int dobro){
+
+	dobro = numero * 2;
+
+	return dobro;
+
 	}
 
-Faça uma função para verificar se um número é positivo ou negativo. Sendo que o valor de retorno será 1 se positivo, -1 se negativo e 0 se for igual a 0.
+	int main()
+	{
+	    int n,d;
+	    printf("digite um numero: "); 
+	    scanf("%d", &n);
+	    printf("%d", dobro(n,d));
+
+	    return 0;
+	}
+
+2. Faça uma função que receba a data atual (dia, mês e ano em inteiro) e exiba-a na tela no formato textual por extenso. Exemplo: Data: 01/01/2000, Imprimir: 1 de janeiro de 2000.
+
+#include <stdio.h>
+int data(int dia, int mes, int ano){
+    
+    switch(mes){
+    	case 1:
+    	printf("%d de janeiro de %d", dia,ano);
+    	break;
+    	case 2:
+    	printf("%d de fevereiro de %d", dia,ano);
+    	break;
+    	case 3:
+    	printf("%d de março de %d", dia,ano);
+    	break;
+    	case 4:
+    	printf("%d de abril de %d", dia,ano);
+    	break;
+    	case 5:
+    	printf("%d de maio de %d", dia,ano);
+    	break;
+    	case 6:
+    	printf("%d de junho de %d", dia,ano);
+    	break;
+    	case 7:
+    	printf("%d de julho de %d", dia,ano);
+    	break;
+    	case 8:
+    	printf("%d de agosto de %d", dia,ano);
+    	break;
+    	case 9:
+    	printf("%d de setembro de %d", dia,ano);
+    	break;
+    	case 10:
+    	printf("%d de outubro de %d", dia,ano);
+    	break;
+    	case 11:
+    	printf("%d de novembro de %d", dia,ano);
+    	break;
+    	case 12:
+    	printf("%d de dezembro de %d", dia,ano);
+    	break;
+        default:
+        printf("Data errada!");
+    }
+
+    return(dia,mes,ano);
+}
+
+int main(){
+    
+    int dia,mes,ano;
+	printf("Entre com o dia: ");
+    scanf("%d", &dia);
+    printf("Entre com o mes: ");
+    scanf("%d", &mes);
+    printf("Entre com o ano: ");
+    scanf("%d", &ano);
+    data(dia,mes,ano);
+
+    return (0);
+ }
+
+
+3. Faça uma função para verificar se um número é positivo ou negativo. Sendo que o valor de retorno será 1 se positivo, -1 se negativo e 0 se for igual a 0.
 
 	#include<stdio.h>
 
-	void verificar(){
-		int num;
-		printf("digite um numero: ");
-		scanf("%d", &num);
+	int verificar(int num){
+
 		if(num > 0){
 			printf("1");
 		}
@@ -85,10 +116,13 @@ Faça uma função para verificar se um número é positivo ou negativo. Sendo q
 		}
 	}
 	int main(){
-		verificar();
+	    int num;
+	    printf("digite um numero: ");
+	    scanf("%d", &num);
+	    verificar(num);
 	}
 
-Faça uma função para verificar se um número é um quadrado perfeito. Um quadrado perfeito é um número inteiro não negativo que pode ser expresso como o quadrado de outro numero inteiro. Ex: 1, 4, 9...
+4. Faça uma função para verificar se um número é um quadrado perfeito. Um quadrado perfeito é um número inteiro não negativo que pode ser expresso como o quadrado de outro numero inteiro. Ex: 1, 4, 9...
 
 	#include<stdio.h>
 
@@ -117,7 +151,7 @@ Faça uma função para verificar se um número é um quadrado perfeito. Um quad
 		return 0;
 	}
 
-Faça uma função e um programa de teste para o cálculo do volume de uma esfera. Sendo que o raio e passado por parâmetro. V = 4/3 ∗ π ∗ R^3.
+5. Faça uma função e um programa de teste para o cálculo do volume de uma esfera. Sendo que o raio e passado por parâmetro. V = 4/3 ∗ π ∗ R^3.
 
 	#include <stdio.h>
 
@@ -136,7 +170,7 @@ Faça uma função e um programa de teste para o cálculo do volume de uma esfer
 		return 0;
 	}
 
-Faça uma função que receba 3 números inteiros como parâmetro, representando horas, minutos e segundos, e os converta em segundos.
+6. Faça uma função que receba 3 números inteiros como parâmetro, representando horas, minutos e segundos, e os converta em segundos.
 
 	#include <stdio.h>
 
@@ -158,7 +192,7 @@ Faça uma função que receba 3 números inteiros como parâmetro, representando
 		return 0;
 	}
 
-Faça uma função que receba uma temperatura em graus Celsius e retorne-a convertida em graus Fahrenheit. A fórmula de conversão é: F = C ∗ (9.0/5.0) + 32.0, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.
+7. Faça uma função que receba uma temperatura em graus Celsius e retorne-a convertida em graus Fahrenheit. A fórmula de conversão é: F = C ∗ (9.0/5.0) + 32.0, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.
 
 	#include <stdio.h>
 
@@ -176,7 +210,7 @@ Faça uma função que receba uma temperatura em graus Celsius e retorne-a conve
 		return 0;
 	}
 
-Sejam a e b os catetos de um triangulo, onde a hipotenusa é obtida pela equação: hipotenusa =√a^2+ b^2 Faça uma função que receba os valores de a e b e calcule o valor da hipotenusa através da equação.
+8. Sejam a e b os catetos de um triangulo, onde a hipotenusa é obtida pela equação: hipotenusa =√a^2+ b^2 Faça uma função que receba os valores de a e b e calcule o valor da hipotenusa através da equação.
 
 	#include <stdio.h>
 	#include <math.h>
@@ -197,7 +231,7 @@ Sejam a e b os catetos de um triangulo, onde a hipotenusa é obtida pela equaç�
 		return 0;
 	}
 
-Faça uma função que receba dois números e retorne qual deles é o maior.
+9. Faça uma função que receba dois números e retorne qual deles é o maior.
 
 	#include <stdio.h>
 	void maior(){
@@ -221,7 +255,7 @@ Faça uma função que receba dois números e retorne qual deles é o maior.
 		return 0;
 	}
 
-Elabore uma função que receba três notas de um aluno como parâmetros e uma letra. Se a letra for A, a função deverá calcular a média aritmética das notas do aluno; se for P, devera calcular a média ponderada, com pesos 5, 3 e 2.
+10. Elabore uma função que receba três notas de um aluno como parâmetros e uma letra. Se a letra for A, a função deverá calcular a média aritmética das notas do aluno; se for P, devera calcular a média ponderada, com pesos 5, 3 e 2.
 
 	#include <stdio.h>
 	void media(){
@@ -248,7 +282,7 @@ Elabore uma função que receba três notas de um aluno como parâmetros e uma l
 		return 0;
 	}
 
-Faça uma função que receba dois valores numéricos e um símbolo. Este símbolo representara a operação que se deseja efetuar com os números. Se o símbolo for + devera ser realizada uma adição, se for − uma subtração, se for / uma divisão e se for ∗ será efetuada uma multiplicação.
+11. Faça uma função que receba dois valores numéricos e um símbolo. Este símbolo representara a operação que se deseja efetuar com os números. Se o símbolo for + devera ser realizada uma adição, se for − uma subtração, se for / uma divisão e se for ∗ será efetuada uma multiplicação.
 
 	#include <stdio.h>
 	void calculadora(){
@@ -275,7 +309,7 @@ Faça uma função que receba dois valores numéricos e um símbolo. Este símbo
 		return 0;
 	}
 
-Faça uma função chamada DesenhaLinha. Ele deve desenhar uma linha na tela usando vários símbolos de igual (Ex:========). A função recebe por parâmetro quantos sinais de igual serão mostrados.
+12. Faça uma função chamada DesenhaLinha. Ele deve desenhar uma linha na tela usando vários símbolos de igual (Ex:========). A função recebe por parâmetro quantos sinais de igual serão mostrados.
 
 	#include <stdio.h>
 	void DesenhaLinha(){
@@ -293,7 +327,7 @@ Faça uma função chamada DesenhaLinha. Ele deve desenhar uma linha na tela usa
 		return 0;
 	}
 
-Faça uma função que receba dois números inteiros positivos por parâmetro e retorne a soma dos N números inteiros existentes entre eles.
+13. Faça uma função que receba dois números inteiros positivos por parâmetro e retorne a soma dos N números inteiros existentes entre eles.
 
 	#include <stdio.h>
 	void soma(){
@@ -326,7 +360,7 @@ Faça uma função que receba dois números inteiros positivos por parâmetro e 
 		return 0;
 	}
 
-Faça uma função que receba por parâmetro dois valores X e Z. Calcule e retorne o resultado de X^Z para o programa principal. Atenção não utilize nenhuma função pronta de exponenciação.
+14. Faça uma função que receba por parâmetro dois valores X e Z. Calcule e retorne o resultado de X^Z para o programa principal. Atenção não utilize nenhuma função pronta de exponenciação.
 
 	#include <stdio.h>
 	void potencia(){
