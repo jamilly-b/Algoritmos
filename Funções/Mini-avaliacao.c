@@ -62,6 +62,99 @@ float raiz(int num){
 
 S = 1 + 1/1! + ½! + 1/3! + 1 /N! */
 
+#include <stdio.h>
+
+float resultado(int);
+int fatorial(int);
+
+int fatorial(int n){
+    int fat = 1;
+    while( n > 0 ){
+        fat *= n--;}
+    return(fat);
+}
+
+float resultado(int n){
+    int i;
+    float s = 0; 
+    for(i = 1; n <= 1 ; n--){
+        s += (i / fatorial(n));
+    }
+    
+    return (s);
+}
+
+
+int main()
+{
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+    
+    printf("%.2f", resultado(numero));
+    
+    return 0;
+}
+
+/*4) Faça uma função que leia 50 valores inteiros e retorna o maior deles.*/
+
+#include <stdio.h>
+
+int maiorvalor();
+int main(){
+    int numero;
+    printf ("%d", maiorvalor());
+    return 0;
+}
+
+int maiorvalor(){
+    int i,numero,maior;
+    printf ("digite um numero: ");
+    scanf ("%d", &numero);
+    maior = numero;
+
+    for (i = 1 ; i < 5; i++){
+        printf ("digite um numero: ");
+        scanf ("%d", &numero);
+        if (numero > maior)
+        maior = numero;
+    }
+
+    return (maior);
+}
+
+/*5) Faça uma função que receba um valor inteiro e positivo e calcula o seu fatorial.*/
+
+#include <stdio.h>
+
+int fatorial();
+int main(){
+    int numero;
+    printf ("digite um numero: ");
+    scanf ("%d", &numero);
+    printf ("%d", fatorial(numero));
+    return 0;
+}
+
+int fatorial(int num){
+    int fat = 1;
+    while(num >= 1){
+        fat *= num;
+        num --;
+    }
+    
+    return (fat);
+}
+
+/*6) Faça uma função recursiva que receba um valor inteiro e positivo e calcule o seu fatorial. 
+(Veja o código da aula mas não copie. Tente fazer com seu entendimento)*/
+
+
+
+
+
+
+
 
 
 
