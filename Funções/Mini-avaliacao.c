@@ -149,12 +149,33 @@ int fatorial(int num){
 /*6) Faça uma função recursiva que receba um valor inteiro e positivo e calcule o seu fatorial. 
 (Veja o código da aula mas não copie. Tente fazer com seu entendimento)*/
 
+#include <stdio.h>
 
+double fatorial(int n);
 
+int main()
+{
+    int n;
+    double f;
+    
+    printf("Digite um número: ");
+    scanf("%d", &n);
+    
+    f = fatorial(n);
+    printf("O fatorial de %d é igual a %.0lf", n, f);
 
+    return 0;
+}
 
-
-
-
-
-
+double fatorial(int n){
+    int fat;
+    
+    if (n <= 1){
+        return (1);
+    }
+    
+    else {
+        fat = n * fatorial(n - 1);
+        return(fat);
+    }
+}
