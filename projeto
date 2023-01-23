@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_LIVROS 50
+
+typedef enum {
+    TELA_SAIR=-1;
+    TELA_PRINCIPAL,
+    TELA_CADASTRAR,
+    TELA_DESCADASTRAR,
+    TELA_LISTAR_TODOS,
+}Telas;
+             
+typedef struct {
+    char titulo[128];
+    char autor[128];
+    char genero[64];
+    char ano[64];    
+}Livro;
+
+typedef struct {
+    Telas menu;
+    int totalLivros;
+    Livro livros[MAX_LIVROS]
+}Biblioteca;
+
+int main(){
+    Biblioteca catalogo;
+    memset(&catalogo, 0x0, sizeof(catalogo));
+    
+    catalogo.menu = TELA_PRINCIPAL;
+    
+    while(catalogo.menu != TELA_SAIR){
+        
+        switch(catalogo.menu){
+            
+            case TELA_PRINCIPAL: {
+                
+            } break;
+            
+            case TELA_CADASTRAR: {
+                catalogo.menu = TELA_PRINCIPAL;
+            } break;
+            
+            case TELA_DESCADASTRARCADASTRAR: {
+                catalogo.menu = TELA_PRINCIPAL;
+            } break;
+            
+            case TELA_LISTAR_TODOS: {
+                catalogo.menu = TELA_PRINCIPAL;
+            } break;
+            
+            default: 
+            catalogo.menu = TELA_PRINCIPAL; break;
+        }
+    }
+    return (0);
+}
