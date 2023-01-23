@@ -64,6 +64,63 @@ int main()
 /*4. Faça um programa que leia um vetor de 8 posições e, em seguida, leia também dois valores X e Y quaisquer correspondentes a duas posições no vetor. 
 Ao final seu programa devera escrever a soma dos valores encontrados nas respectivas posições X e Y. */
 
+#include <stdio.h>
+
+int main()
+{
+    int vetor[8];
+    int i, num, posicao, soma;
+    for(i = 0; i < 8; i++){
+        printf("digite um numero: ");
+        scanf("%d", &num);
+        vetor[i] = num;
+    }
+    printf("\nVetor: ");
+    for(i = 0; i < 8; i++){
+        printf("%d ", vetor[i]);
+    }
+    soma = 0;
+    for(i = 0; i < 2; i++){
+        printf("\nqual posição do vetor você deseja [0-7]: ");
+        scanf("%d", &posicao);
+        printf("no vetor criado, a posição %d é igual a %d \n", posicao,vetor[posicao]);
+        soma += vetor[posicao];
+    }
+    printf("A soma dos valores encontrado nas posições escolhidas é igual a %d.", soma);
+    
+    return 0;
+}
+/*5. Leia um vetor de 10 posições. Contar e escrever quantos valores pares ele possui.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int vetor[10];
+    int i, num, n, contagem = 0;
+    for(i = 0; i < 10; i++){
+        printf("digite um numero: ");
+        scanf("%d", &num);
+        vetor[i] = num;
+        
+    }
+    printf("\nVetor criado: ");
+    for(i = 0; i < 10; i++){
+        printf("%d ", vetor[i]);  
+    }
+    printf("\nOs numeros pares do vetor são: ");
+    for(i = 0; i < 10; i++){
+        if(vetor[i] % 2 == 0){
+            contagem = contagem + 1;
+            int par[contagem];
+            par[n] = vetor[i];
+            printf("%d ", par[n]);
+        }
+    }
+    printf("\nO vetor possui %d numeros pares.", contagem);
+    
+    return 0;
+}
 
 
 
