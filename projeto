@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_LIVROS 50
 
 typedef enum {
-    TELA_SAIR=-1;
+    TELA_SAIR = -1,
     TELA_PRINCIPAL,
     TELA_CADASTRAR,
     TELA_DESCADASTRAR,
@@ -16,13 +17,13 @@ typedef struct {
     char autor[128];
     char genero[64];
     char ano[64];    
-}Livro;
+} Livro;
 
 typedef struct {
     Telas menu;
     int totalLivros;
-    Livro livros[MAX_LIVROS]
-}Biblioteca;
+    Livro livros[MAX_LIVROS];
+} Biblioteca;
 
 int main(){
     Biblioteca catalogo;
@@ -30,10 +31,64 @@ int main(){
     
     catalogo.menu = TELA_PRINCIPAL;
     
+    
+    FILE * memoria = fopen("catalogo.bin", "rb");
+    if(memoria == NULL){
+        printf("Erro ao abrir o arquivo de memórias de livros.\n");
+        printf("Você deve criar o arquivo 'catalogo.bin' na primeira execução.\n");
+        return 1;
+    }
+    size_t lidos = fread(catalogo.livros, sizeof(Livro), MAX_LIVROS, memoria);
+    printf("%zd livros catalogados.\n", lidos);
+    catalogo.totalLivros = (int)lidos;
+    fclose(memoria);
+    
+    
+    
+    
+    int opcao;
     while(catalogo.menu != TELA_SAIR){
+        do{
+            printf("-----------------------------------\n");
+            printf("\t   Biblioteca");
+            printf("\n-----------------------------------\n");
+            printf("Escolha uma opção:\n");
+            printf("Digite 1 para cadastrar novo livro\n");
+            printf("Digite 2 para remover um livro\n");
+            printf("Digite 3 para ver todos os livros\n");
+            printf("Digite 0 para sair do programa\n");
+            scanf("%d", &opcao);
+        } while(opcao < 0 || opcao > 3);
         
-        switch(catalogo.menu){
-            
+        switch(opcao){
+            case 0: {
+                catalogo.menu = TELA_SAIR;
+            } break;
+            case 1: {
+                catalogo.menu = TELA_CADASTRAR;
+                if (catalogo.totalLivros >= MAX_LIVROS){
+                    printf("\nA biblioteca está lotada, não é possível adicionar um novo livro.\n");
+                    catalogo.menu = TELA_PRINCIPAL;
+                }
+            } break;
+            case 2: {
+                catalogo.menu = TELA_DESCADASTRAR;
+                if(catalogo.totalLivros == 0){
+                    printf("\nNão há nenhum livro para ser removido.\n");
+                    catalogo.menu = TELA_PRINCIPAL;
+                }
+            } break;
+            case 3: {
+                catalogo.menu = TELA_LISTAR_TODOS;
+                if(catalogo.totalLivros == 0){
+                    printf("\nNão há nenhum livro para ser exibido.\n");
+                    catalogo.menu = TELA_PRINCIPAL;
+                }
+            } break;
+        }
+    }
+    while(catalogo.menu != TELA_SAIR){
+        switch(catalogo.menu){ 
             case TELA_PRINCIPAL: {
                 
             } break;
@@ -42,11 +97,21 @@ int main(){
                 catalogo.menu = TELA_PRINCIPAL;
             } break;
             
-            case TELA_DESCADASTRARCADASTRAR: {
+            case TELA_DESCADASTRAR: {
                 catalogo.menu = TELA_PRINCIPAL;
             } break;
             
             case TELA_LISTAR_TODOS: {
+                printf("-----------------------------------\n");
+                printf("\tCatalogando Livros: ");
+                printf("\n-----------------------------------\n");
+                int i;
+                for(i = 0; i < catalogo.totalLivros; i++){
+                    printf("Livro: %d\n", i);
+                    printf("Título: %s\n", catalogo.livros[i].titulo);
+                    printf("Gênero: %s\n", catalogo.livros[i].genero);
+                    printf("\n-----------------------------------\n");
+                }
                 catalogo.menu = TELA_PRINCIPAL;
             } break;
             
@@ -54,5 +119,6 @@ int main(){
             catalogo.menu = TELA_PRINCIPAL; break;
         }
     }
+            
     return (0);
 }
