@@ -16,7 +16,6 @@ typedef struct {
     char titulo[128];
     char autor[128];
     char genero[64];
-    char ano[64];    
 } Livro;
 
 typedef struct {
@@ -94,6 +93,62 @@ int main(){
             } break;
             
             case TELA_CADASTRAR: {
+                printf("-----------------------------------\n");
+                printf("\tTela de cadastro: ");
+                printf("\n-----------------------------------\n");
+                Livros novo;
+                char opcao = 's';
+                
+                            
+            
+                do{
+                    memset(&novo, 0x0, sizeof(novo));
+                    printf("Digite o título do livro: \n");
+                    fgets(novo.titulo, 128, stdin);
+                    int id = 0;
+                    while(novo.titulo != '\0' && novo.titulo[id] != '\n'){
+                        id++;
+                    }
+                    novo.titulo[id] = '\0';
+                    
+                    printf("Digite o gênero do livro: \n");
+                    fgets(novo.genero, 128, stdin);
+                    id = 0;
+                    while(novo.genero != '\0' && novo.genero[id] != '\n'){
+                        id++;
+                    }
+                    novo.genero[id] = '\0';
+                    
+                    printf("Digite o nome do autor do livro: \n");
+                    fgets(novo.autor, 128, stdin);
+                    id = 0;
+                    while(novo.autor != '\0' && novo.autor[id] != '\n'){
+                        id++;
+                    }
+                    novo.autor[id] = '\0';
+                    
+                    printf("Tem certeza que deseja adicionar este livro? [s/n]\n")
+                    opcao = getchar();
+                    int c = 0;
+                    while((c = getchar()) != '\n' && c != EOF){ }
+                }while (opcao == 'n' || opcao == 'N');
+                
+                catalogo.livros[catalogo.totalLivros] = novo;
+                catalogo.totalLivros++;
+                memoria = fopen("catalogo.bin", "w+b");
+                if (memoria == NULL){
+                    printf("Erro ao abrir o catalogo.bin\n")
+                    return 0;
+                }
+                
+                size_t salvos = fwrite(catalogo.livros, sizeof(livro)),
+                catalogo.totalLivros, memoria);
+                if(salvos != (size_t)catalogo.totalLivros){
+                    printf("Erro ao salvar contatos na memoria contato.bin\n");
+                    return 1;
+                }
+                fclose(memoria);
+                
                 catalogo.menu = TELA_PRINCIPAL;
             } break;
             
@@ -119,6 +174,11 @@ int main(){
             catalogo.menu = TELA_PRINCIPAL; break;
         }
     }
+
+    
+    }        
             
+        
     return (0);
 }
+
