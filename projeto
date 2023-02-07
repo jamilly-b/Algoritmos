@@ -10,7 +10,7 @@ typedef enum {
     TELA_CADASTRAR,
     TELA_DESCADASTRAR,
     TELA_LISTAR_TODOS,
-}Telas;
+} Telas;
              
 typedef struct {
     char titulo[128];
@@ -29,8 +29,7 @@ int main(){
     memset(&catalogo, 0x0, sizeof(catalogo));
     
     catalogo.menu = TELA_PRINCIPAL;
-    
-    
+
     FILE * memoria = fopen("catalogo.bin", "rb");
     if(memoria == NULL){
         printf("Erro ao abrir o arquivo de memórias de livros.\n");
@@ -48,7 +47,7 @@ int main(){
             printf("-----------------------------------\n");
             printf("\t   Biblioteca");
             printf("\n-----------------------------------\n");
-            printf("Escolha uma opção:\n");
+            printf("Escolha uma opcao:\n");
             printf("Digite 1 para cadastrar novo livro\n");
             printf("Digite 2 para remover um livro\n");
             printf("Digite 3 para ver todos os livros\n");
@@ -58,50 +57,26 @@ int main(){
         
         switch(opcao){
             case 0: {
-                catalogo.menu = TELA_SAIR;
-            } break;
-            case 1: {
-                catalogo.menu = TELA_CADASTRAR;
-                if (catalogo.totalLivros >= MAX_LIVROS){
-                    printf("\nA biblioteca está lotada, não é possível adicionar um novo livro.\n");
-                    catalogo.menu = TELA_PRINCIPAL;
-                }
-            } break;
-            case 2: {
-                catalogo.menu = TELA_DESCADASTRAR;
-                if(catalogo.totalLivros == 0){
-                    printf("\nNão há nenhum livro para ser removido.\n");
-                    catalogo.menu = TELA_PRINCIPAL;
-                }
-            } break;
-            case 3: {
-                catalogo.menu = TELA_LISTAR_TODOS;
-                if(catalogo.totalLivros == 0){
-                    printf("\nNão há nenhum livro para ser exibido.\n");
-                    catalogo.menu = TELA_PRINCIPAL;
-                }
-            } break;
-        }
-    }
-    while(catalogo.menu != TELA_SAIR){
-        switch(catalogo.menu){ 
-            case TELA_PRINCIPAL: {
-               
+                catalogo.menu = TELA_SAIR; 
             } break;
             
-            case TELA_CADASTRAR: {
-                printf("-----------------------------------\n");
+            case 1: {
+                if(catalogo.totalLivros >= MAX_LIVROS){
+                    printf("\nA biblioteca está lotada, nao é possível adicionar um novo livro.\n");
+                    break;
+                }
+              	printf("-----------------------------------\n");
                 printf("\tTela de cadastro: ");
                 printf("\n-----------------------------------\n");
                 Livro novo;
                 char opcao = 's';
-                printf("Você deseja adicionar um novo livro à sua biblioteca? Enter para continuar\n\n");
+                printf("Voce deseja adicionar um novo livro a sua biblioteca? Enter para continuar\n\n");
                 int c = 0;
                 while((c = getchar()) != '\n' && c != EOF){ }
                 
                 do{
                     memset(&novo, 0x0, sizeof(novo));
-                    printf("Digite o título do livro: \n");
+                    printf("Digite o titulo do livro: \n");
                     fgets(novo.titulo, 128, stdin);
                     int id = 0;
                     while(novo.titulo[id] != '\0' && novo.titulo[id] != '\n'){
@@ -117,7 +92,7 @@ int main(){
                     }
                     novo.autor[id] = '\0';
                     
-                    printf("Digite o gênero do livro: \n");
+                    printf("Digite o genero do livro: \n");
                     fgets(novo.genero, 64, stdin);
                     id = 0;
                     while(novo.genero[id] != '\0' && novo.genero[id] != '\n'){
@@ -146,29 +121,29 @@ int main(){
                 }
                 fclose(memoria);
                 
-                system("clear");
-                catalogo.menu = TELA_PRINCIPAL;
-            }
-            break;
-            
-            
-            
-            
-            case TELA_DESCADASTRAR: {
+                catalogo.menu = TELA_PRINCIPAL; 
+            } break;
+
+            case 2: {
+                if(catalogo.totalLivros == 0){
+                    printf("\nNao ha nenhum livro para ser removido.\n");
+                    break;
+                }
+                
                 printf("-----------------------------------\n");
-                printf("\tTela de remoção: \n");
+                printf("\tTela de remocao: \n");
                 printf("-----------------------------------\n");
                 int i;
                 for(i = 0; i < catalogo.totalLivros; i++){
                     printf("Livro %d\n", i);
-                    printf("Título: %s\n", catalogo.livros[i].titulo);
+                    printf("Titulo: %s\n", catalogo.livros[i].titulo);
                     printf("Escritor: %s\n", catalogo.livros[i].autor);
-                    printf("Gênero: %s\n", catalogo.livros[i].genero);
+                    printf("Genero: %s\n", catalogo.livros[i].genero);
                     printf("-----------------------------------\n");
                 }
                 int indice = -1;
                 do{
-                    printf("Digite um índice do livro para ser removido 0 até %d: ", i);
+                    printf("Digite um indice do livro para ser removido 0 ate %d: ", i);
                     scanf("%d", &indice);
                     int c = 0;
                     while((c = getchar()) != '\n' && c != EOF){ }
@@ -189,31 +164,28 @@ int main(){
                     return 1;
                 }
                 fclose(memoria);
-                
-                
-                catalogo.menu = TELA_PRINCIPAL;
             } break;
             
-            case TELA_LISTAR_TODOS: {
+            case 3: {
+                if(catalogo.totalLivros == 0){
+                    printf("\nNao ha nenhum livro para ser exibido.\n");
+                    break;
+                }
+                
                 printf("-----------------------------------\n");
-                printf("\tCatalogando Livros: ");
+                printf("\tEstante: ");
                 printf("\n-----------------------------------\n");
                 
                 int i;
                 for(i = 0; i < catalogo.totalLivros; i++){
                     printf("Livro: %d\n", i);
-                    printf("Título: %s\n", catalogo.livros[i].titulo);
-                    printf("Gênero: %s\n", catalogo.livros[i].genero);
+                    printf("Titulo: %s\n", catalogo.livros[i].titulo);
+                    printf("Genero: %s\n", catalogo.livros[i].genero);
                     printf("\n-----------------------------------\n");
                 }
-                catalogo.menu = TELA_PRINCIPAL;
             } break;
-            
-            default: 
-            catalogo.menu = TELA_PRINCIPAL; break;
         }
     }
-            
-        
+      
     return (0);
 }
