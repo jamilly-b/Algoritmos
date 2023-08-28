@@ -175,7 +175,6 @@ a. Cada funcionário receberá o equivalente a 20% do seu salário bruto de deze
  - maior valor pago como abono; A tela abaixo é um exemplo de execução do programa, apenas para fins ilustrativos. Os valores podem mudar a cada execução do programa.
 
 Projeção de Gastos com Abono
-============================ 
  
 Salário: 1000
 Salário: 300
@@ -252,7 +251,7 @@ cesar           987458
 rosemary        789456125
 Neste arquivo, o nome do usuário possui 15 caracteres. A partir deste arquivo, você deve criar um programa que gere um relatório, chamado "relatório.txt", no seguinte formato:
 ACME Inc.               Uso do espaço em disco pelos usuários
-------------------------------------------------------------------------
+
 Nr.  Usuário        Espaço utilizado     % do uso
 
 1    alexandre       434,99 MB             16,85%
