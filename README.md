@@ -3,8 +3,8 @@ Este repositório contém uma coleção de exercícios que realizei para pratica
 
 ## Linguagens Incluídas
 
-- [Python](./python)
+- [Python](./Python)
 - [C++](./cpp)
-- [Java](./java)
+- [Java](./Java)
 - [C](./C)
 
