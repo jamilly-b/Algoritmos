@@ -1,10 +1,6 @@
 # Exercícios Com Listas
 https://wiki.python.org.br/ExerciciosListas
 
-# Exercícios de Programação
-
-## Vetores e Listas
-
 ### Questão 1
 
 Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
