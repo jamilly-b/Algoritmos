@@ -4,7 +4,7 @@ Este repositório contém uma coleção de exercícios que realizei para pratica
 ## Linguagens Incluídas
 
 - [Python](./Python)
-- [C++](./cpp)
+- [C++](./C++)
 - [Java](./Java)
 - [C](./C)
 
