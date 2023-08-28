@@ -1,4 +1,4 @@
-#Exercícios Com Listas
+# Exercícios Com Listas
 https://wiki.python.org.br/ExerciciosListas
 
 # Exercícios de Programação
