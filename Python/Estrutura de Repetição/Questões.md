@@ -9,6 +9,9 @@ Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso
 ### Questão 2
 Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.
 
+[Resposta](./ER2.py)
+
+
 ### Questão 3
 Faça um programa que leia e valide as seguintes informações:
 Nome: maior que 3 caracteres;
@@ -17,29 +20,57 @@ Salário: maior que zero;
 Sexo: 'f' ou 'm';
 Estado Civil: 's', 'c', 'v', 'd';
 
+[Resposta](./ER3.py)
+
+
 ### Questão 4
 Supondo que a população de um país A seja da ordem de 80000 habitantes com uma taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes com uma taxa de crescimento de 1.5%. Faça um programa que calcule e escreva o número de anos necessários para que a população do país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
+
+
+[Resposta](./ER4.py)
+
 
 ### Questão 5
 Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
 
+[Resposta](./ER5.py)
+
+
 ### Questão 6
 Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os números um ao lado do outro.
+
+[Resposta](./ER6.py)
+
 
 ### Questão 7
 Faça um programa que leia 5 números e informe o maior número.
 
+[Resposta](./ER7.py)
+
+
 ### Questão 8
 Faça um programa que leia 5 números e informe a soma e a média dos números.
+
+[Resposta](./ER8.py)
+
 
 ### Questão 9
 Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 
+[Resposta](./ER9.py)
+
+
 ### Questão 10
 Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
 
+[Resposta](./ER10.py)
+
+
 ### Questão 11
 Altere o programa anterior para mostrar no final a soma dos números.
+
+[Resposta](./ER11.py)
+
 
 ### Questão 12
 Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número inteiro entre 1 a 10. O usuário deve informar de qual numero ele deseja ver a tabuada. A saída deve ser conforme o exemplo abaixo:
@@ -49,8 +80,14 @@ Tabuada de 5:
 ...
 5 X 10 = 50
 
+[Resposta](./ER12.py)
+
+
 ### Questão 13
 Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
+
+[Resposta](./ER13.py)
+
 
 ### Questão 14
 Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números impares.
