@@ -7,4 +7,4 @@ Este repositório contém uma coleção de exercícios e projetos básicos que r
 - [C++](./C++)
 - [Java](./Java)
 - [C](./C)
-
+- [JavaScript](./JavaScript)
