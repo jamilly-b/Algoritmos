@@ -2,7 +2,7 @@
 https://wiki.python.org.br/EstruturaSequencial
 ### Questão 1
 Faça um Programa que mostre a mensagem "Alo mundo" na tela.
-[Resposta](./Python/Estrutura Sequencial/ES1.py)
+[Resposta](./ES1.py)
 ### Questão 2
 Faça um Programa que peça um número e então mostre a mensagem O número informado foi [número].
 ### Questão 3
