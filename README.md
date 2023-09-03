@@ -8,4 +8,4 @@ Este repositório contém uma coleção de exercícios e projetos básicos que r
 - [Java](./Java)
 - [C](./C)
 - [JavaScript](./JavaScript)
-- [Algoritmos e Estrutura de Dados](./Algoritmos%e%Est.%de%Dados)
+- [Algoritmos e Estrutura de Dados](./Algoritmos%20e%20Est.de%20Dados)
