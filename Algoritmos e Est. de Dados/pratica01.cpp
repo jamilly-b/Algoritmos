@@ -14,14 +14,20 @@ class Veiculo{
     }
 };
 int main() {
-  cout << "Primeira aplicação C++" << endl;
-  {
-    Veiculo veiculo1("v1");
-    {
-      Veiculo veiculo2("v2");
-      {
-        Veiculo veiculo3("v3");
-      }
-    }
-  }
+  // cout << "Primeira aplicação C++" << endl;
+  // {
+  //   Veiculo veiculo1("v1");
+  //   {
+  //     Veiculo veiculo2("v2");
+  //     {
+  //       Veiculo veiculo3("v3");
+  //     }
+  //   }
+  // }
+  Veiculo * obj1 = new Veiculo("v1");
+  Veiculo * obj2 = new Veiculo("v2");
+  Veiculo * obj3 = new Veiculo("v3");
+  delete obj1;
+  delete obj2;
+  delete obj3;
 }
