@@ -9,7 +9,7 @@ Este repositório contém uma coleção de exercícios e projetos básicos que r
 - [C](./C)
 - [JavaScript](./JavaScript)
 
-## Algoritmos
+## Matérias
   
 - [Algoritmos e Estrutura de Dados](./Algoritmos%20e%20Est.%20de%20Dados)
 
