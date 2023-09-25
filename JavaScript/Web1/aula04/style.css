@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    font-size: 10px;
+}
+
+a{
+    color: black;
+    font-size: 20px;
+}
+li{
+    list-style: none;
+}
+
+header{
+    height: 5%;
+    display: flex;
+    background-color: rebeccapurple;
+}
+
+#info{
+    height: 30%;
+    display: flex;
+    background-color: burlywood;
+}
+
+#blog{
+    height: 50%;
+    display: flex;
+    background-color: green;
+}
+
+footer{
+    height: 15%;
+    background-color: blueviolet;
+}
+#card-img{
+    width: 30rem;
+}
