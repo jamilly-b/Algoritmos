@@ -1,0 +1,141 @@
+/* 
+ * Colors
+ * 
+ * Dark gray		#34383c
+ * medium gray		#81858a
+ * purple			#620e6e
+ * blue				#4385c1
+ * light blue		#9ac9f4
+ * darker blue		#043867
+ * darkest blue	    #002342
+ * blue tint		#e7ecf0
+ * green			#7aa120
+ */
+
+
+
+body {
+	background: white;
+	color: #81858a;
+	font: 1em/1.6 Helvetica, Verdana, sans-serif;
+}
+
+header {
+	background: #4385c1;
+	color: white;
+	font-size: .9rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap; 
+}
+
+
+footer {
+	background: #34383c;
+	color: white;
+	padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+}
+h1 {}
+h2 {
+	font: 2.25rem/1.2 Helvetica, Verdana, sans-serif;
+}
+h3 {}
+h4 {
+	font-size: 1.2rem;
+}
+h5 {}
+h6 {}
+p {	font-size: .925rem;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+
+/* Links */
+a:link, a:visited {
+	color: #4385c1;
+	text-decoration: none;
+}
+a:hover, a:focus, a:active {
+	color: #043867;
+}
+
+
+
+/* Header */
+.branding {
+	color: #9ac9f4;
+	text-transform: uppercase;
+	display: inline;
+}
+
+/* navigation */
+
+#quick-nav {
+	display: inline;
+}
+#quick-nav ul{
+	display: flex;
+	justify-content: space-around;
+}
+#quick-nav li {
+	border-right: 1px solid #9ac9f4;
+	list-style: none;
+}
+#quick-nav li:last-of-type {
+	border: none;
+}
+
+#quick-nav a:link, #quick-nav a:visited {
+	color: white;	
+}
+#quick-nav a:hover, #quick-nav a:focus, #quick-nav a:active {
+	color: #9ac9f4;
+}
+
+#utilities-nav a.button{
+	display: inline;
+	color: white;
+}
+
+
+#main-nav {
+	background-color: #043867;
+	font-family: Georgia, serif;
+	font-size: 1.2em;
+	display:block;
+	flex-grow: 1;
+}
+#main-nav ul{
+	display: flex;
+	justify-content: space-around;
+}
+#main-nav li:hover {
+	background-color: #002342;
+	list-style: none;
+}
+#main-nav li{
+	list-style: none;
+	color: red;
+}
+
+/* footer */
+
+#full-nav a:link, #full-nav a:visited {
+	color: #81858a;	
+}
+#full-nav h3 a:link, #full-nav h3 a:visited {
+	color: white;
+}
+#full-nav a:hover, #full-nav a:focus, #full-nav a:active {
+	color: white;
+}
