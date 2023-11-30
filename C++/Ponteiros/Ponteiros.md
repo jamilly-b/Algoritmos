@@ -16,12 +16,11 @@ Faça um programa que leia dois valores inteiros e chame uma função que receba
 [Resposta](./P3.cpp)
 
 ### Questão 4
-Crie um programa que contenha um array de floats com 10 elementos. 
-Imprima o endereço de cada posição desse array.
+Crie um programa que contenha um array de floats com 10 elementos. Imprima o endereço de cada posição desse array.
+
 [Resposta](./P4.cpp)
 
 ### Questão 5
-*Crie um programa que contenha uma matriz de float com 3 linhas e 3 colunas. 
-Imprima o endereço de cada posição dessa matriz.
+Crie um programa que contenha uma matriz de float com 3 linhas e 3 colunas. Imprima o endereço de cada posição dessa matriz.
 
 [Resposta](./P5.cpp)
