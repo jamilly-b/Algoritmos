@@ -41,19 +41,15 @@ public:
       throw -1;
   }
 
-  int buscaSequencial(int key) {
-    // TODO
-    int *i = items;
-    for (int j = 0; j <= tamanho; j++) {
-      if (*i == key) {
-        return j;
-      } else if (*i > key) {
-        return -1;
-      }
-      i++;
+int buscaSequencial(int key) {
+  // TODO
+    for (int j = 0; j < tamanho; j++) {
+        if (items[j] == key) {
+            return j;
+        }
     }
     return -1;
-  }
+}
 
   int buscaBinaria(int item) { return buscaBinaria(items, 0, tamanho - 1, item); }
 
