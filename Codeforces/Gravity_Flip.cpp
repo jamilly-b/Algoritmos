@@ -14,6 +14,20 @@ int main()
        cin >> arrayValoresColunas[i] ;
     }
     
+    // ordena o array de colunas
+    bool troca = true;
+    for(int i = 0; i < qtdColunas - 1 && troca; i++){
+        troca = false;
+        for(int j = 0; j < qtdColunas - 1 - i; j++){
+            if(arrayValoresColunas[j] > arrayValoresColunas[j + 1]){
+                int temp = arrayValoresColunas[j];
+                arrayValoresColunas[j] = arrayValoresColunas[j + 1];
+                arrayValoresColunas[j + 1] = temp;
+                troca = true;
+            }
+        }
+    }
+    
     int maiorValorArray = arrayValoresColunas[0];
     
     for(int i = 1; i < qtdColunas; i++){
@@ -43,33 +57,25 @@ int main()
     }
     
     // imprime a matriz para teste
-    cout << endl;
-    for(int i = 0; i < qtdLinhas; i++){
-        for(int j = 0; j < qtdColunas; j++){
-            cout << matriz[i][j] << " ";
+    // cout << endl;
+    // for(int i = 0; i < qtdLinhas; i++){
+    //     for(int j = 0; j < qtdColunas; j++){
+    //         cout << matriz[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+    
+    int arraySomaColunas[qtdColunas];
+    for(int j = 0; j < qtdColunas; j++){
+        int soma = 0;
+        for(int i = 0; i < qtdLinhas; i++){
+            soma += matriz[i][j];
         }
-        cout << endl;
+        arraySomaColunas[j] = soma;
     }
     
-    //lógica para mudar a gravidade
-    for(int i = qtdLinhas - 1; i >= 0; i--){
-        for(int j = qtdColunas - 1; j >= 0; j--){
-            if((qtdColunas - 1) > qtdColunas){
-                int temp =  matriz[i][(qtdColunas - 1)];
-                matriz[i][(qtdColunas - 1)] = matriz[i][qtdColunas];
-                matriz[i][qtdColunas] = temp;
-            }
-        }
-    }
-    
-    
-    // imprime a matriz para teste    
-    cout << endl;
-    for(int i = 0; i < qtdLinhas; i++){
-        for(int j = 0; j < qtdColunas; j++){
-            cout << matriz[i][j] << " ";
-        }
-        cout << endl;
+    for (int i = 0; i < qtdColunas; i++){
+        cout << arraySomaColunas[i] << " ";
     }
 
     return 0;
