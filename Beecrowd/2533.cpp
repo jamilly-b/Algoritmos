@@ -3,22 +3,21 @@
 using namespace std;
 
 int main() {
-    int qtdMaterias;
-    double somaProdutos = 0, somaCargas = 0;
-    double media;
+    int M;
 
-    while (cin >> qtdMaterias) {
-        for (int i = 0; i < qtdMaterias; i++) {
-            int nota, cargaHoraria;
-            cin >> nota >> cargaHoraria;
-            somaProdutos += nota * cargaHoraria;
-            somaCargas += cargaHoraria;
+    while (cin >> M) {
+        double notas, cargaHoraria;
+        double somaPonderada = 0, totalCargaHoraria = 0;
+
+        for (int i = 0; i < M; i++) {
+            cin >> notas >> cargaHoraria;
+            somaPonderada += notas * cargaHoraria; 
+            totalCargaHoraria += cargaHoraria; 
         }
-        media = somaProdutos / (somaCargas * 100);
-        cout << fixed << setprecision(4) << media << endl;
 
-        somaProdutos = 0;
-        somaCargas = 0;
+        double IRA = (somaPonderada / (totalCargaHoraria * 100)); 
+
+        cout << fixed << setprecision(4) << IRA << endl;
     }
 
     return 0;
